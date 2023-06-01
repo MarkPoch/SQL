@@ -19,5 +19,3 @@ queries.sql: Contains advanced SQL queries to analyze the SuperBowl data.
 Feel free to explore the project folders to access the SQL scripts, data files, and any additional documentation associated with each project. Each project provides a unique perspective on SQL usage and application.
 
 If you have any questions or would like to collaborate on a project, please feel free to reach out. Thank you for visiting my SQL Projects Portfolio!
-
-Click here to visit the repository.
