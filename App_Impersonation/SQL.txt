@@ -1,0 +1,52 @@
+/* PROJECT INSTRUCTIONS
+
+Think about your favorite apps, and pick one that stores your data- like a game that stores scores, an app that lets you post updates, etc. Now in this project, you're going to imagine that the app stores your data in a SQL database (which is pretty likely!), and write SQL statements that might look like their own SQL.
+
+CREATE a table to store the data.
+INSERT a few example rows in the table.
+Use an UPDATE to emulate what happens when you edit data in the app.
+Use a DELETE to emulate what happens when you delete data in the app.*/
+
+
+
+/* What does the app's SQL look like? */
+
+--Creating a tables values needed for DrDisrespects Valut Access
+CREATE TABLE dr_dis_vault(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    pass_code INTEGER,
+    voice_recg TEXT,
+    access TEXT);
+
+--Inserting need data for the values for access to the vault
+INSERT INTO dr_dis_vault 
+VALUES (1,"The Greatest", 6969, "Get Out of My Face", "ALWAYS");
+INSERT INTO dr_dis_vault 
+VALUES (2,"Asssassin", 4454, "The Queen is Present", "TRUE");
+INSERT INTO dr_dis_vault
+VALUES (3, "Princess Assassin", 1234, "Hi Daddy!", "FALSE");
+INSERT INTO dr_dis_vault 
+VALUES (4,"Timmy", 1110, "ITS ME TIMMY! DAMN MAN", "NEVER");
+INSERT INTO dr_dis_vault 
+VALUES (5,"Nade", 1168, "Whats up Stupid", "FALSE");
+INSERT INTO dr_dis_vault 
+VALUES (6,"Master", 654789080213, "ACCESS GRANTED", "ALWAYS");
+
+--Selecting the entire table to visiualize what is provided
+SELECT * FROM dr_dis_vault;
+
+
+-Updating the pascode for the master vault to have it more complex
+UPDATE dr_dis_vault SET pass_code = 76789875644566773
+WHERE id = 6;
+
+--Viewing the change to confirm it was changed
+SELECT * FROM dr_dis_vault;
+
+
+--Removing Nade from any sort of access or notion. Shot more than Dr on the last 18, and is fed up with thim
+DELETE FROM dr_dis_vault WHERE name = "Nade";
+
+--Making sure data is deleted and done with 
+SELECT * FROM dr_dis_vault;
