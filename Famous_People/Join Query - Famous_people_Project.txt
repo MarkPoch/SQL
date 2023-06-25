@@ -1,0 +1,68 @@
+/*List of Instructions to choose from and follow
+In this project, you’re going to make your own table with some small set of “famous people”, then make more tables about things they do and join those to create nice human readable lists.
+
+For example, here are types of famous people and the questions your data could answer:
+
+Movie stars: What movies are they in? Are they married to each other?
+Singers: What songs did they write? Where are they from?
+Authors: What books did they write?
+Fictional characters: How are they related to other characters? What books do they show up in?*/
+
+
+/* Create table about the people and what they do here */
+
+-- Create the singers table
+CREATE TABLE singers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    origin TEXT
+);
+
+-- Create the songs table
+CREATE TABLE songs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    singer_id INTEGER,
+    title TEXT,
+    FOREIGN KEY (singer_id) REFERENCES singers(id)
+);
+-- Sample data into the singers table
+INSERT INTO singers (name, origin) VALUES ("Adele", "England");
+INSERT INTO singers (name, origin) VALUES ("Beyoncé", "United States");
+INSERT INTO singers (name, origin) VALUES ("Ed Sheeran", "England");
+INSERT INTO singers (name, origin) VALUES ("Taylor Swift", "United States");
+INSERT INTO singers (name, origin) VALUES ("Justin Bieber", "Canada");
+INSERT INTO singers (name, origin) VALUES ("Rihanna", "Barbados");
+INSERT INTO singers (name, origin) VALUES ("Shakira", "Colombia");
+INSERT INTO singers (name, origin) VALUES ("Bruno Mars", "United States");
+INSERT INTO singers (name, origin) VALUES ("Katy Perry", "United States");
+INSERT INTO singers (name, origin) VALUES ("Sia", "Australia");
+INSERT INTO singers (name, origin) VALUES ("Drake", "Canada");
+INSERT INTO singers (name, origin) VALUES ("Ariana Grande", "United States");
+INSERT INTO singers (name, origin) VALUES ("Sam Smith", "England");
+INSERT INTO singers (name, origin) VALUES ("Dua Lipa", "United Kingdom");
+INSERT INTO singers (name, origin) VALUES ("Billie Eilish", "United States");
+
+-- Sample data into the songs table
+INSERT INTO songs (singer_id, title) VALUES (1, "Hello");
+INSERT INTO songs (singer_id, title) VALUES (1, "Someone Like You");
+INSERT INTO songs (singer_id, title) VALUES (2, "Single Ladies");
+INSERT INTO songs (singer_id, title) VALUES (2, "Halo");
+INSERT INTO songs (singer_id, title) VALUES (3, "Shape of You");
+INSERT INTO songs (singer_id, title) VALUES (3, "Thinking Out Loud");
+INSERT INTO songs (singer_id, title) VALUES (4, "Love Story");
+INSERT INTO songs (singer_id, title) VALUES (4, "Blank Space");
+INSERT INTO songs (singer_id, title) VALUES (5, "Baby");
+INSERT INTO songs (singer_id, title) VALUES (5, "Sorry");
+INSERT INTO songs (singer_id, title) VALUES (6, "Umbrella");
+INSERT INTO songs (singer_id, title) VALUES (6, "Diamonds");
+INSERT INTO songs (singer_id, title) VALUES (7, "Hips Don't Lie");
+INSERT INTO songs (singer_id, title) VALUES (7, "Waka Waka (This Time for Africa)");
+INSERT INTO songs (singer_id, title) VALUES (8, "Just the Way You Are");
+INSERT INTO songs (singer_id, title) VALUES (8, "Locked Out of Heaven");
+
+
+--Joined the singers name withe song name
+SELECT singers.name, songs.title, singers.origin
+FROM singers
+JOIN songs 
+ON singers.id = songs.singer_id;
